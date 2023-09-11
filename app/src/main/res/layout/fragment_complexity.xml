@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".view.fragments.ComplexityFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_comp_img"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_comp_button_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="back"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:background="@drawable/background_button_menu_exit"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/id_comp_tv_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="choose the difficulty level:"
+        android:textSize="33sp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:background="@drawable/background_tv_menu"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_comp_button_back"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.15"/>
+
+    <ImageView
+        android:id="@+id/id_comp_iv_easy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintStart_toStartOf="@id/id_comp_tv_easy"
+        app:layout_constraintEnd_toEndOf="@id/id_comp_tv_easy"
+        app:layout_constraintBottom_toTopOf="@id/id_comp_tv_easy"/>
+
+    <TextView
+        android:id="@+id/id_comp_tv_easy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.42"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="EASY "
+        android:textStyle="italic"
+        android:textSize="28sp"
+        android:background="@drawable/background_tv_menu"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintBottom_toTopOf="@id/id_comp_tv_hard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/id_comp_tv_middle"
+        app:layout_constraintTop_toBottomOf="@id/id_comp_tv_title"/>
+
+    <ImageView
+        android:id="@+id/id_comp_iv_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintStart_toStartOf="@id/id_comp_tv_middle"
+        app:layout_constraintEnd_toEndOf="@id/id_comp_tv_middle"
+        app:layout_constraintBottom_toTopOf="@id/id_comp_tv_middle"/>
+
+    <TextView
+        android:id="@+id/id_comp_tv_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="MIDDLE "
+        android:textStyle="italic"
+        android:textSize="28sp"
+        app:layout_constraintWidth_percent="0.42"
+        android:background="@drawable/background_tv_menu"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintBottom_toTopOf="@id/id_comp_tv_hard"
+        app:layout_constraintStart_toEndOf="@id/id_comp_tv_easy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_comp_tv_title"/>
+
+    <ImageView
+        android:id="@+id/id_comp_iv_hard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/id_comp_tv_hard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.32" />
+
+    <TextView
+        android:id="@+id/id_comp_tv_hard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="HARD "
+        android:textStyle="italic"
+        android:textSize="28sp"
+        android:background="@drawable/background_tv_menu"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.42"
+        app:layout_constraintStart_toStartOf="@id/id_comp_iv_hard"
+        app:layout_constraintEnd_toEndOf="@id/id_comp_iv_hard"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

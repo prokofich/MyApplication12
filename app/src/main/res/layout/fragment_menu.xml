@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".view.fragments.MenuFragment">
+
+    <ImageView
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_menu_img"/>
+
+    <TextView
+        android:background="@drawable/background_tv_menu"
+        android:id="@+id/id_menu_tv_name_game"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="SportsQuiz"
+        android:textSize="68sp"
+        android:fontFamily="@font/racing_sans_one"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintWidth_percent="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/id_menu_iv_football"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/id_menu_iv_hockey"
+        app:layout_constraintTop_toBottomOf="@id/id_menu_tv_name_game"
+        app:layout_constraintBottom_toTopOf="@id/id_menu_iv_basket"/>
+
+    <TextView
+        android:id="@+id/id_menu_tv_football"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Football"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:background="@drawable/background_tv_menu"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/id_menu_iv_football"
+        app:layout_constraintEnd_toEndOf="@id/id_menu_iv_football"
+        app:layout_constraintTop_toBottomOf="@id/id_menu_iv_football"/>
+
+
+    <ImageView
+        android:id="@+id/id_menu_iv_hockey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toEndOf="@id/id_menu_iv_football"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_menu_tv_name_game"
+        app:layout_constraintBottom_toTopOf="@id/id_menu_iv_basket"/>
+
+    <TextView
+        android:id="@+id/id_menu_tv_hockey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Hockey"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:background="@drawable/background_tv_menu"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/id_menu_iv_hockey"
+        app:layout_constraintEnd_toEndOf="@id/id_menu_iv_hockey"
+        app:layout_constraintTop_toBottomOf="@id/id_menu_iv_hockey"/>
+
+
+    <ImageView
+        android:id="@+id/id_menu_iv_basket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/id_menu_button_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_menu_tv_football"
+        app:layout_constraintWidth_percent="0.35" />
+
+    <TextView
+        android:id="@+id/id_menu_tv_basket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Basketball"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:background="@drawable/background_tv_menu"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.42"
+        app:layout_constraintStart_toStartOf="@id/id_menu_iv_basket"
+        app:layout_constraintEnd_toEndOf="@id/id_menu_iv_basket"
+        app:layout_constraintTop_toBottomOf="@id/id_menu_iv_basket"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_menu_button_exit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="E X I T"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:background="@drawable/background_button_menu_exit"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
