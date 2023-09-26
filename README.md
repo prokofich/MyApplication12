@@ -1,4 +1,4 @@
-- Приложение представляет собой игру для заработка виртуальной валюты
+- Приложение представляет собой викторину на спортивную тематику
   
 ![1](https://github.com/prokofich/MyApplication12/assets/71032169/ced02cd6-9862-450d-86f5-968be81c24a1)
 ![2](https://github.com/prokofich/MyApplication12/assets/71032169/882a4853-953b-4730-9fd8-4e0aae0f1122)
