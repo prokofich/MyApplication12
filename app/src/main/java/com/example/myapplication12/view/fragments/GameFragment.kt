@@ -11,48 +11,48 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import com.bumptech.glide.Glide
 import com.example.myapplication12.R
-import com.example.myapplication12.constant.COMPLEXITY_EASY
-import com.example.myapplication12.constant.COMPLEXITY_HARD
-import com.example.myapplication12.constant.COMPLEXITY_MIDDLE
-import com.example.myapplication12.constant.CURRENT_RESULT
-import com.example.myapplication12.constant.GAME
-import com.example.myapplication12.constant.GAME_BASKETBALL
-import com.example.myapplication12.constant.GAME_COMPLEXITY
-import com.example.myapplication12.constant.GAME_FOOTBALL
-import com.example.myapplication12.constant.GAME_HOCKEY
-import com.example.myapplication12.constant.MAIN
-import com.example.myapplication12.constant.TIME_SPENT
-import com.example.myapplication12.constant.listQuestionBasketEasy
-import com.example.myapplication12.constant.listQuestionBasketHard
-import com.example.myapplication12.constant.listQuestionBasketMiddle
-import com.example.myapplication12.constant.listQuestionFootballEasy
-import com.example.myapplication12.constant.listQuestionFootballHard
-import com.example.myapplication12.constant.listQuestionFootballMiddle
-import com.example.myapplication12.constant.listQuestionHockeyEasy
-import com.example.myapplication12.constant.listQuestionHockeyHard
-import com.example.myapplication12.constant.listQuestionHockeyMiddle
-import com.example.myapplication12.constant.mapCorrectAnswerBasketEasy
-import com.example.myapplication12.constant.mapCorrectAnswerBasketHard
-import com.example.myapplication12.constant.mapCorrectAnswerBasketMiddle
-import com.example.myapplication12.constant.mapCorrectAnswerFootballEasy
-import com.example.myapplication12.constant.mapCorrectAnswerFootballHard
-import com.example.myapplication12.constant.mapCorrectAnswerFootballMiddle
-import com.example.myapplication12.constant.mapCorrectAnswerHockeyEasy
-import com.example.myapplication12.constant.mapCorrectAnswerHockeyHard
-import com.example.myapplication12.constant.mapCorrectAnswerHockeyMiddle
-import com.example.myapplication12.constant.mapWrongAnswerBasketEasy
-import com.example.myapplication12.constant.mapWrongAnswerBasketHard
-import com.example.myapplication12.constant.mapWrongAnswerBasketMiddle
-import com.example.myapplication12.constant.mapWrongAnswerFootballEasy
-import com.example.myapplication12.constant.mapWrongAnswerFootballHard
-import com.example.myapplication12.constant.mapWrongAnswerFootballMiddle
-import com.example.myapplication12.constant.mapWrongAnswerHockeyEasy
-import com.example.myapplication12.constant.mapWrongAnswerHockeyHard
-import com.example.myapplication12.constant.mapWrongAnswerHockeyMiddle
-import com.example.myapplication12.constant.url_image_menu1
-import com.example.myapplication12.constant.url_image_menu2
-import com.example.myapplication12.constant.url_image_menu3
-import com.example.myapplication12.constant.url_image_menu4
+import com.example.myapplication12.model.constant.COMPLEXITY_EASY
+import com.example.myapplication12.model.constant.COMPLEXITY_HARD
+import com.example.myapplication12.model.constant.COMPLEXITY_MIDDLE
+import com.example.myapplication12.model.constant.CURRENT_RESULT
+import com.example.myapplication12.model.constant.GAME
+import com.example.myapplication12.model.constant.GAME_BASKETBALL
+import com.example.myapplication12.model.constant.GAME_COMPLEXITY
+import com.example.myapplication12.model.constant.GAME_FOOTBALL
+import com.example.myapplication12.model.constant.GAME_HOCKEY
+import com.example.myapplication12.model.constant.MAIN
+import com.example.myapplication12.model.constant.TIME_SPENT
+import com.example.myapplication12.model.constant.listQuestionBasketEasy
+import com.example.myapplication12.model.constant.listQuestionBasketHard
+import com.example.myapplication12.model.constant.listQuestionBasketMiddle
+import com.example.myapplication12.model.constant.listQuestionFootballEasy
+import com.example.myapplication12.model.constant.listQuestionFootballHard
+import com.example.myapplication12.model.constant.listQuestionFootballMiddle
+import com.example.myapplication12.model.constant.listQuestionHockeyEasy
+import com.example.myapplication12.model.constant.listQuestionHockeyHard
+import com.example.myapplication12.model.constant.listQuestionHockeyMiddle
+import com.example.myapplication12.model.constant.mapCorrectAnswerBasketEasy
+import com.example.myapplication12.model.constant.mapCorrectAnswerBasketHard
+import com.example.myapplication12.model.constant.mapCorrectAnswerBasketMiddle
+import com.example.myapplication12.model.constant.mapCorrectAnswerFootballEasy
+import com.example.myapplication12.model.constant.mapCorrectAnswerFootballHard
+import com.example.myapplication12.model.constant.mapCorrectAnswerFootballMiddle
+import com.example.myapplication12.model.constant.mapCorrectAnswerHockeyEasy
+import com.example.myapplication12.model.constant.mapCorrectAnswerHockeyHard
+import com.example.myapplication12.model.constant.mapCorrectAnswerHockeyMiddle
+import com.example.myapplication12.model.constant.mapWrongAnswerBasketEasy
+import com.example.myapplication12.model.constant.mapWrongAnswerBasketHard
+import com.example.myapplication12.model.constant.mapWrongAnswerBasketMiddle
+import com.example.myapplication12.model.constant.mapWrongAnswerFootballEasy
+import com.example.myapplication12.model.constant.mapWrongAnswerFootballHard
+import com.example.myapplication12.model.constant.mapWrongAnswerFootballMiddle
+import com.example.myapplication12.model.constant.mapWrongAnswerHockeyEasy
+import com.example.myapplication12.model.constant.mapWrongAnswerHockeyHard
+import com.example.myapplication12.model.constant.mapWrongAnswerHockeyMiddle
+import com.example.myapplication12.model.constant.url_image_menu1
+import com.example.myapplication12.model.constant.url_image_menu2
+import com.example.myapplication12.model.constant.url_image_menu3
+import com.example.myapplication12.model.constant.url_image_menu4
 import com.example.myapplication12.databinding.FragmentGameBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -66,7 +66,6 @@ class GameFragment : Fragment() {
     private var jobTimer:Job = Job()
     private var countSec = 0
     private var level = 1
-
     private var listMyQuestion = listOf<String>()
     private var mapMyCorrectAnswers = mapOf<String,String>()
     private var mapMyWrongAnswers = mapOf<String,String>()
@@ -101,33 +100,33 @@ class GameFragment : Fragment() {
         showAnswers()
 
         //обработка ответов
-        binding!!.idGameTvAnswer1.setOnClickListener {
+        binding?.idGameTvAnswer1?.setOnClickListener {
             updateTextViewLevel()
-            checkMyAnswer(binding!!.idGameTvAnswer1.text.toString())
+            checkMyAnswer(binding?.idGameTvAnswer1?.text.toString())
         }
 
         //обработка ответов
-        binding!!.idGameTvAnswer2.setOnClickListener {
+        binding?.idGameTvAnswer2?.setOnClickListener {
             updateTextViewLevel()
-            checkMyAnswer(binding!!.idGameTvAnswer2.text.toString())
+            checkMyAnswer(binding?.idGameTvAnswer2?.text.toString())
         }
 
         //обработка ответов
-        binding!!.idGameTvAnswer3.setOnClickListener {
+        binding?.idGameTvAnswer3?.setOnClickListener {
             updateTextViewLevel()
-            checkMyAnswer(binding!!.idGameTvAnswer3.text.toString())
+            checkMyAnswer(binding?.idGameTvAnswer3?.text.toString())
         }
 
         //обработка ответов
-        binding!!.idGameTvAnswer4.setOnClickListener {
+        binding?.idGameTvAnswer4?.setOnClickListener {
             updateTextViewLevel()
-            checkMyAnswer(binding!!.idGameTvAnswer4.text.toString())
+            checkMyAnswer(binding?.idGameTvAnswer4?.text.toString())
         }
 
         //обработка выхода
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
             stopTimer()
-            MAIN.navController.navigate(R.id.action_gameFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_gameFragment_to_menuFragment)
         }
 
     }
@@ -140,24 +139,22 @@ class GameFragment : Fragment() {
 
     //функция запуска таймера
     @SuppressLint("SetTextI18n")
-    private fun startTimer(){
+    private fun startTimer() {
         jobTimer = CoroutineScope(Dispatchers.Main).launch {
             while(true){
                 delay(1000)
                 countSec+=1
                 if(countSec%60<=9){
-                    binding!!.idGameTvTimer.text = "${countSec/60}:0${countSec%60}"
+                    binding?.idGameTvTimer?.text = "${countSec/60}:0${countSec%60}"
                 }else{
-                    binding!!.idGameTvTimer.text = "${countSec/60}:${countSec%60}"
+                    binding?.idGameTvTimer?.text = "${countSec/60}:${countSec%60}"
                 }
             }
         }
     }
 
     //функция всплывающего сообщения
-    private fun showToast(message:String){
-        Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT).show()
-    }
+    private fun showToast(message:String) = Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT).show()
 
     //функция остановки таймера
     private fun stopTimer(){
@@ -167,22 +164,24 @@ class GameFragment : Fragment() {
     //функция установки фоновой картинки
     private fun loadBackgroundImage(){
         when(MAIN.getNumberBackgroundImage()){
-            1 -> { loadImage(url_image_menu1,binding!!.idGameImg) }
-            2 -> { loadImage(url_image_menu2,binding!!.idGameImg) }
-            3 -> { loadImage(url_image_menu3,binding!!.idGameImg) }
-            4 -> { loadImage(url_image_menu4,binding!!.idGameImg) }
+            1 -> { loadImage(url_image_menu1 , binding?.idGameImg) }
+            2 -> { loadImage(url_image_menu2 , binding?.idGameImg) }
+            3 -> { loadImage(url_image_menu3 , binding?.idGameImg) }
+            4 -> { loadImage(url_image_menu4 , binding?.idGameImg) }
         }
     }
 
     //функция загрузки изображения
-    private fun loadImage(url:String,id: ImageView){
-        Glide.with(requireContext())
-            .load(url)
-            .into(id)
+    private fun loadImage(url : String , id : ImageView?) {
+        id?.let {
+            Glide.with(requireContext())
+                .load(url)
+                .into(it)
+        }
     }
 
-    private fun loadQuestion(){
-        when(requireArguments().getString(GAME)){
+    private fun loadQuestion() {
+        when(requireArguments().getString(GAME)) {
             GAME_FOOTBALL -> {
                 when(requireArguments().getString(GAME_COMPLEXITY)){
                     COMPLEXITY_EASY -> {
@@ -244,41 +243,41 @@ class GameFragment : Fragment() {
     }
 
     //функция показа вопроса
-    private fun showQuestion(){
-        binding!!.idGameTvQuestion.text = listMyQuestion[level-1]
+    private fun showQuestion() {
+        binding?.idGameTvQuestion?.text = listMyQuestion[level-1]
     }
 
-    private fun showAnswers(){
-        when(listRandomNumber.shuffled()[0]){
+    private fun showAnswers() {
+        when(listRandomNumber.shuffled()[0]) {
             1 -> {
-                binding!!.idGameTvAnswer1.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
-                binding!!.idGameTvAnswer2.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
-                binding!!.idGameTvAnswer3.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
-                binding!!.idGameTvAnswer4.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
+                binding?.idGameTvAnswer1?.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
+                binding?.idGameTvAnswer2?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
+                binding?.idGameTvAnswer3?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
+                binding?.idGameTvAnswer4?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
             }
             2 -> {
-                binding!!.idGameTvAnswer2.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
-                binding!!.idGameTvAnswer1.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
-                binding!!.idGameTvAnswer3.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
-                binding!!.idGameTvAnswer4.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
+                binding?.idGameTvAnswer2?.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
+                binding?.idGameTvAnswer1?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
+                binding?.idGameTvAnswer3?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
+                binding?.idGameTvAnswer4?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
             }
             3 -> {
-                binding!!.idGameTvAnswer4.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
-                binding!!.idGameTvAnswer2.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
-                binding!!.idGameTvAnswer1.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
-                binding!!.idGameTvAnswer3.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
+                binding?.idGameTvAnswer4?.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
+                binding?.idGameTvAnswer2?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
+                binding?.idGameTvAnswer1?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
+                binding?.idGameTvAnswer3?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
             }
             4 -> {
-                binding!!.idGameTvAnswer3.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
-                binding!!.idGameTvAnswer2.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
-                binding!!.idGameTvAnswer1.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
-                binding!!.idGameTvAnswer4.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
+                binding?.idGameTvAnswer3?.text = mapMyCorrectAnswers[listMyQuestion[level-1]]
+                binding?.idGameTvAnswer2?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong1"]
+                binding?.idGameTvAnswer1?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong2"]
+                binding?.idGameTvAnswer4?.text = mapMyWrongAnswers[listMyQuestion[level-1]+"wrong3"]
             }
         }
     }
 
-    private fun checkMyAnswer(answer:String){
-        if(answer==mapMyCorrectAnswers[listMyQuestion[level-1]]){
+    private fun checkMyAnswer(answer : String) {
+        if(answer == mapMyCorrectAnswers[listMyQuestion[level-1]]) {
             //правильно
             showToast("CORRECT!")
             level+=1
@@ -287,8 +286,8 @@ class GameFragment : Fragment() {
                 showQuestion()
                 showAnswers()
             }else{
-                goToGameOverFragment(requireArguments().getString(GAME)!!,
-                    requireArguments().getString(GAME_COMPLEXITY)!!,
+                goToGameOverFragment(requireArguments().getString(GAME).toString(),
+                    requireArguments().getString(GAME_COMPLEXITY).toString(),
                     binding!!.idGameTvTimer.text.toString(),
                     countCorrectAnswers)
             }
@@ -300,27 +299,27 @@ class GameFragment : Fragment() {
                 showQuestion()
                 showAnswers()
             }else{
-                goToGameOverFragment(requireArguments().getString(GAME)!!,
-                    requireArguments().getString(GAME_COMPLEXITY)!!,
-                    binding!!.idGameTvTimer.text.toString(),
+                goToGameOverFragment(requireArguments().getString(GAME).toString(),
+                    requireArguments().getString(GAME_COMPLEXITY).toString(),
+                    binding?.idGameTvTimer?.text.toString(),
                     countCorrectAnswers)
             }
         }
     }
 
-    private fun goToGameOverFragment(game:String,complexity:String,time:String,result:Int){
+    private fun goToGameOverFragment(game : String , complexity : String , time : String , result : Int) {
         stopTimer()
         val bundle = Bundle()
         bundle.putString(GAME,game)
         bundle.putString(GAME_COMPLEXITY,complexity)
         bundle.putString(TIME_SPENT,time)
         bundle.putInt(CURRENT_RESULT,result)
-        MAIN.navController.navigate(R.id.action_gameFragment_to_gameOverFragment,bundle)
+        MAIN.navController?.navigate(R.id.action_gameFragment_to_gameOverFragment,bundle)
     }
 
     @SuppressLint("SetTextI18n")
     private fun updateTextViewLevel(){
-        binding!!.idGameTvLvl.text = "$level/10"
+        binding?.idGameTvLvl?.text = "$level/10"
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.myapplication12.constant
+package com.example.myapplication12.model.constant
 
 import com.example.myapplication12.view.activity.MainActivity
 

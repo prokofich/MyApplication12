@@ -1,4 +1,4 @@
-package com.example.myapplication12.api
+package com.example.myapplication12.model.api
 
 import com.example.myapplication12.model.ResponceWebView
 import retrofit2.Response
@@ -12,7 +12,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("splash.php")
     suspend fun setPostParametersPhone(
-        @Field("phone_name") phone_name:String,
+        @Field("phone_name") phoneName:String,
         @Field("locale") locale:String,
         @Field("unique") unique:String
     ): Response<ResponceWebView>

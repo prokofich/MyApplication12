@@ -1,4 +1,4 @@
-package com.example.myapplication12.constant
+package com.example.myapplication12.model.constant
 
 const val url_image_splash = "http://37.27.9.28/19/splash3.png"
 

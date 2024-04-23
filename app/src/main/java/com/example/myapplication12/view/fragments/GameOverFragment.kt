@@ -11,21 +11,21 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import com.bumptech.glide.Glide
 import com.example.myapplication12.R
-import com.example.myapplication12.constant.COMPLEXITY_EASY
-import com.example.myapplication12.constant.COMPLEXITY_HARD
-import com.example.myapplication12.constant.COMPLEXITY_MIDDLE
-import com.example.myapplication12.constant.CURRENT_RESULT
-import com.example.myapplication12.constant.GAME
-import com.example.myapplication12.constant.GAME_BASKETBALL
-import com.example.myapplication12.constant.GAME_COMPLEXITY
-import com.example.myapplication12.constant.GAME_FOOTBALL
-import com.example.myapplication12.constant.GAME_HOCKEY
-import com.example.myapplication12.constant.MAIN
-import com.example.myapplication12.constant.TIME_SPENT
-import com.example.myapplication12.constant.url_image_bronza_medal
-import com.example.myapplication12.constant.url_image_gold_medal
-import com.example.myapplication12.constant.url_image_pedestal
-import com.example.myapplication12.constant.url_image_serebro_medal
+import com.example.myapplication12.model.constant.COMPLEXITY_EASY
+import com.example.myapplication12.model.constant.COMPLEXITY_HARD
+import com.example.myapplication12.model.constant.COMPLEXITY_MIDDLE
+import com.example.myapplication12.model.constant.CURRENT_RESULT
+import com.example.myapplication12.model.constant.GAME
+import com.example.myapplication12.model.constant.GAME_BASKETBALL
+import com.example.myapplication12.model.constant.GAME_COMPLEXITY
+import com.example.myapplication12.model.constant.GAME_FOOTBALL
+import com.example.myapplication12.model.constant.GAME_HOCKEY
+import com.example.myapplication12.model.constant.MAIN
+import com.example.myapplication12.model.constant.TIME_SPENT
+import com.example.myapplication12.model.constant.url_image_bronza_medal
+import com.example.myapplication12.model.constant.url_image_gold_medal
+import com.example.myapplication12.model.constant.url_image_pedestal
+import com.example.myapplication12.model.constant.url_image_serebro_medal
 import com.example.myapplication12.databinding.FragmentGameOverBinding
 
 class GameOverFragment : Fragment() {
@@ -48,27 +48,27 @@ class GameOverFragment : Fragment() {
         checkResultAndLoadImage()
 
         //загрузка картинки с сервера
-        loadImage(url_image_pedestal,binding!!.idGameoverIvPedestal)
+        loadImage(url_image_pedestal,binding?.idGameoverIvPedestal)
 
         //показ потраченного времени
-        binding!!.idGameoverTvTime.text = "you did it in ${requireArguments().getString(TIME_SPENT)} min"
+        binding?.idGameoverTvTime?.text = "you did it in ${requireArguments().getString(TIME_SPENT)} min"
 
         //возврат в меню
-        binding!!.idGameoverButtonMenu.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_gameOverFragment_to_menuFragment)
+        binding?.idGameoverButtonMenu?.setOnClickListener {
+            MAIN.navController?.navigate(R.id.action_gameOverFragment_to_menuFragment)
         }
 
         //рестарт игры
-        binding!!.idGameoverButtonRestart.setOnClickListener {
+        binding?.idGameoverButtonRestart?.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(GAME,requireArguments().getString(GAME))
             bundle.putString(GAME_COMPLEXITY,requireArguments().getString(GAME_COMPLEXITY))
-            MAIN.navController.navigate(R.id.action_gameOverFragment_to_gameFragment,bundle)
+            MAIN.navController?.navigate(R.id.action_gameOverFragment_to_gameFragment,bundle)
         }
 
         //обработка выхода
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            MAIN.navController.navigate(R.id.action_gameOverFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_gameOverFragment_to_menuFragment)
         }
 
         checkUpdateRecords()
@@ -82,35 +82,35 @@ class GameOverFragment : Fragment() {
     }
 
     //функция загрузки изображения
-    private fun loadImage(url:String,id: ImageView){
-        Glide.with(requireContext())
-            .load(url)
-            .into(id)
+    private fun loadImage(url : String , id : ImageView?) {
+        id?.let {
+            Glide.with(requireContext())
+                .load(url)
+                .into(it)
+        }
     }
 
     //функция показа всплывающего сообщения
-    private fun showToast(message:String){
-        Toast.makeText(requireContext(),message, Toast.LENGTH_LONG).show()
-    }
+    private fun showToast(message:String) = Toast.makeText(requireContext(),message, Toast.LENGTH_LONG).show()
 
     //функция проверки и отображения результата
     @SuppressLint("SetTextI18n")
     private fun checkResultAndLoadImage(){
         when(requireArguments().getInt(CURRENT_RESULT)){
             0,1,2,3 -> {
-                loadImage(url_image_bronza_medal,binding!!.idGameoverIvMedal)
+                loadImage(url_image_bronza_medal,binding?.idGameoverIvMedal)
                 showToast("Results: ${requireArguments().getInt(CURRENT_RESULT)}, badly")
-                binding!!.idGameoverTvResults.text = "Results: ${requireArguments().getInt(CURRENT_RESULT)}/10 , badly"
+                binding?.idGameoverTvResults?.text = "Results: ${requireArguments().getInt(CURRENT_RESULT)}/10 , badly"
             }
             4,5,6,7 -> {
-                loadImage(url_image_serebro_medal,binding!!.idGameoverIvMedal)
+                loadImage(url_image_serebro_medal,binding?.idGameoverIvMedal)
                 showToast("Results: ${requireArguments().getInt(CURRENT_RESULT)}, not bad")
-                binding!!.idGameoverTvResults.text = "Results: ${requireArguments().getInt(CURRENT_RESULT)}/10 , not bad"
+                binding?.idGameoverTvResults?.text = "Results: ${requireArguments().getInt(CURRENT_RESULT)}/10 , not bad"
             }
             8,9,10  -> {
-                loadImage(url_image_gold_medal,binding!!.idGameoverIvMedal)
+                loadImage(url_image_gold_medal,binding?.idGameoverIvMedal)
                 showToast("Results: ${requireArguments().getInt(CURRENT_RESULT)}, super")
-                binding!!.idGameoverTvResults.text = "Results: ${requireArguments().getInt(CURRENT_RESULT)}/10 , super"
+                binding?.idGameoverTvResults?.text = "Results: ${requireArguments().getInt(CURRENT_RESULT)}/10 , super"
             }
         }
     }
